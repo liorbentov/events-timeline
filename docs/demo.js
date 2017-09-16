@@ -14,7 +14,7 @@ export default () => (
         currentIndex={2}
         emptyColor="white"
         onClick={() => {}}
-        points={[{ title: 'First' }, {}, { title: 'Third' }]}
+        events={[{ title: 'First' }, {}, { title: 'Third' }]}
       />}
     </ReactSpecimen>
   </Page>

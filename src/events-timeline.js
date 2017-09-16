@@ -13,31 +13,31 @@ class EventsTimeline extends Component {
   }
 
   getRight(index) {
-    const pointsAmount = this.props.points.length;
-    const gap = 100 / pointsAmount;
+    const eventsAmount = this.props.events.length;
+    const gap = 100 / eventsAmount;
     const halfGap = gap / 2;
-    const multiplyBy = pointsAmount - index;
+    const multiplyBy = eventsAmount - index;
 
     const right = (gap * multiplyBy) - halfGap;
     return right;
   }
 
   handlePointClick(currentIndex) {
-    const { onClick } = this.props;
+    const { onClick, events } = this.props;
     const right = this.getRight(currentIndex);
     this.setState({ right, currentIndex });
 
     if (onClick) {
-      onClick(currentIndex);
+      onClick(events[currentIndex]);
     }
   }
 
   mapItems() {
-    const { points } = this.props;
+    const { events } = this.props;
 
-    return points.map((item, index) => {
+    return events.map((item, index) => {
       const onClick = () => this.handlePointClick(index);
-      const style = this.getPointStyle(index);
+      const style = this.getEventStyle(index);
       const classes = [!item.title && 'untitled-event'].filter(Boolean);
       const key = `event-${index}`;
       return (
@@ -49,7 +49,7 @@ class EventsTimeline extends Component {
     });
   }
 
-  getPointStyle(pointIndex) {
+  getEventStyle(pointIndex) {
     const { currentIndex } = this.state;
     const { color, emptyColor } = this.props;
     const style = { backgroundColor: emptyColor };
@@ -92,8 +92,8 @@ EventsTimeline.propTypes = {
   color: PropTypes.string,
   currentIndex: PropTypes.number,
   emptyColor: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-  points: PropTypes.arrayOf(PropTypes.shape({ title: PropTypes.string })).isRequired
+  events: PropTypes.arrayOf(PropTypes.shape({ title: PropTypes.string })).isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 EventsTimeline.defaultProps = {

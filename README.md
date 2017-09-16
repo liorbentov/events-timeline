@@ -1,8 +1,9 @@
 # Events Timelime
 
-This is a React component to display events on a timeline.
-Events can have a title or just be a point in "time"
-Well, There is not an actual time, the events are just spread across a line...
+This is a React component for displaying events on a timeline.
+Events can have a title or just be a point in "time".
+
+Well, There is not an actual time, the events are simply scattered across a line...
 
 ### How to use
 ##### Install
@@ -16,7 +17,7 @@ Well, There is not an actual time, the events are just spread across a line...
 
     ...
     <EventsTimeline
-        points={[{ title: 'First' }, {}, { title: 'Third' }]}
+        events={[{ title: 'First' }, {}, { title: 'Third' }]}
         onClick={val => console.log(val)}
         color="blue"
         emptyColor="yellow"
@@ -32,8 +33,8 @@ Don't forget to add `style.css`!
 | color         | string           | ```'#5151ff'``` | The color for 'filled' line & events
 | currentIndex  | number           |               0 | The last point that will be 'filled' from the begining 
 | emptyColor    | string           | ```'#ffffff'``` | The color for 'empty' line & events
+| events        | Array (Required) |                 | The events to display.  An event can be an empty object or an object with 'title' property
 | onClick       | function         |                 | The callback when click on event
-| points        | Array (Required) |                 | The events to display.  An event can be an empty object or an object with 'title' property
 
 License
 ----
