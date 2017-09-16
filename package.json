@@ -3,7 +3,7 @@
   "description": "Component for displaying events on a timeline",
   "author": "Lior Shub",
   "user": "liorshub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
