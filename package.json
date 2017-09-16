@@ -3,7 +3,7 @@
   "description": "Component for displaying events on a timeline",
   "author": "Lior Shub",
   "user": "liorshub",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -88,8 +88,7 @@
   },
   "keywords": [
     "react",
-    "reactjs",
-    "boilerplate"
+    "reactjs"
   ],
   "license": "MIT",
   "pre-push": [
