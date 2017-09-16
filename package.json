@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
-  "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
-  "version": "5.0.1",
+  "name": "Events Timeline",
+  "description": "Component for displaying events on a timeline",
+  "author": "Lior Shub",
+  "user": "liorshub",
+  "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -51,7 +51,7 @@
     "git-prepush-hook": "^1.0.2",
     "html-webpack-plugin": "^2.30.1",
     "html-webpack-template": "^6.0.1",
-    "jest": "^20.0.4",
+    "jest": "^20.0.0",
     "json-loader": "^0.5.4",
     "purecss": "^0.6.2",
     "raw-loader": "^0.5.1",
