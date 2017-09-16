@@ -1,1 +1,67 @@
-/* TODO: insert default styles of your component here for easy access */
+.events-timeline-component {
+  position: relative;
+}
+
+.events-timeline-container {
+  width: 100%;
+  height: 30px;
+  padding: 20px 0px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.events-timeline-line {
+  width: 100%;
+  display: block;
+  height: 3px;
+  position: absolute;
+  top: 33px;
+  border-radius: 10px;
+}
+
+.events-timeline-filled {
+  position: absolute;
+  left: 0;
+  width: auto;
+  transition: right 0.5s ease;
+  right: 90%;
+}
+
+.events-timeline-event {
+  margin: auto;
+  text-align: center;
+  vertical-align: bottom;
+  position: relative;
+  width: 100%;
+}
+
+.events-timeline-event button {
+  text-decoration: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: inline-flex;
+  box-shadow: 0 0 0 1px white;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.events-timeline-event button.untitled-event {
+  width: 3px;
+  height: 12px;
+  border-radius: 20%;
+  margin-top: 3px;
+  transition: all 1s ease;
+  box-shadow: 0 0 0 1px white;
+}
+
+.event-title {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
