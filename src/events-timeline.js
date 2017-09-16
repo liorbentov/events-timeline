@@ -93,7 +93,7 @@ EventsTimeline.propTypes = {
   currentIndex: PropTypes.number,
   emptyColor: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  points: PropTypes.Array.isRequired
+  points: PropTypes.arrayOf(PropTypes.shape({ title: PropTypes.string })).isRequired
 };
 
 EventsTimeline.defaultProps = {

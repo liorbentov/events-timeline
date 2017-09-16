@@ -11,6 +11,9 @@ Well, There is not an actual time, the events are just spread across a line...
 ##### Use in a view/component
 ```javascript
     import EventsTimeline from 'events-timeline';
+
+    import 'events-timeline/style.css';
+
     ...
     <EventsTimeline
         points={[{ title: 'First' }, {}, { title: 'Third' }]}
@@ -20,6 +23,8 @@ Well, There is not an actual time, the events are just spread across a line...
         currentIndex={2}
     />
 ```
+
+Don't forget to add `style.css`!
 
 ##### Component's Properties
 | Property      | Type             | Default  | Notes |
