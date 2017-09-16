@@ -1,19 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class EventsTimeline extends React.Component {
-  static propTypes: {
-    color: React.PropTypes.string,
-    currentIndex: React.PropTypes.number,
-    emptyColor: React.PropTypes.string,
-    onClick: React.PropType.func,
-    points: React.PropTypes.Array.isRequired,
-  }
-
-  static defaultProps = {
-    color: '#5151ff',
-    currentIndex: 0,
-    emptyColor: '#ffffff',
-  }
+class EventsTimeline extends Component {
 
   constructor(props) {
     super(props);
@@ -30,7 +18,7 @@ export class EventsTimeline extends React.Component {
     const halfGap = gap / 2;
     const multiplyBy = pointsAmount - index;
 
-    const right = gap * multiplyBy - halfGap;
+    const right = (gap * multiplyBy) - halfGap;
     return right;
   }
 
@@ -45,20 +33,20 @@ export class EventsTimeline extends React.Component {
   }
 
   mapItems() {
-    const { currentIndex } = this.state;
     const { points } = this.props;
 
     return points.map((item, index) => {
       const onClick = () => this.handlePointClick(index);
       const style = this.getPointStyle(index);
-      const classes = [!item.title && "untitled-event"].filter(Boolean).join(" ");
+      const classes = [!item.title && 'untitled-event'].filter(Boolean);
+      const key = `event-${index}`;
       return (
-        <li key={index} className="events-timeline-event">
+        <li key={key} className="events-timeline-event">
           { item.title && <span className="event-title">{item.title}</span> }
-          <button style={style} className={classes} onClick={onClick}/>
+          <button style={style} className={classes} onClick={onClick} />
         </li>
       );
-    })
+    });
   }
 
   getPointStyle(pointIndex) {
@@ -98,4 +86,20 @@ export class EventsTimeline extends React.Component {
       </div>
     );
   }
+}
+
+EventsTimeline.propTypes = {
+  color: PropTypes.string,
+  currentIndex: PropTypes.number,
+  emptyColor: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  points: PropTypes.Array.isRequired
 };
+
+EventsTimeline.defaultProps = {
+  color: '#5151ff',
+  currentIndex: 0,
+  emptyColor: '#ffffff'
+};
+
+export default EventsTimeline;
